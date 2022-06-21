@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Area, Post
+from .models import Area, Post, Tipo
 
 # Register your models here.
 
@@ -7,6 +7,12 @@ class AreaAdmin(admin.ModelAdmin):
     #define que campos son estaticos y no se pueden modificar en el panel
     #de admon
     readonly_fields = ('created', 'updated')
+
+class TipoAdmin(admin.ModelAdmin):
+    #define que campos son estaticos y no se pueden modificar en el panel
+    #de admon
+    readonly_fields = ('created', 'updated')
+
 
 class PostAdmin(admin.ModelAdmin):
     readonly_fields = ('created', 'updated')
@@ -42,4 +48,5 @@ class PostAdmin(admin.ModelAdmin):
 
 # Para administrar este modelo desde el panel admin
 admin.site.register(Area, AreaAdmin)
+admin.site.register(Tipo, TipoAdmin)
 admin.site.register(Post, PostAdmin)

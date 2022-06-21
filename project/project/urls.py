@@ -21,6 +21,7 @@ from core import views as core_views
 urlpatterns = [
     path('adm1n/', admin.site.urls),
     path('', core_views.root, name="root"),
-    path('main/', include('core.urls')),
-
+    path('acercade/', core_views.about, name="about"),
+    #path('bitacora/', include('core.urls')),
+    path('bitacora/', include('backadmin.binnacle.urls')),
 ]
